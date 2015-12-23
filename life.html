@@ -33,7 +33,7 @@ function seed() {
     for (var x = 0; x < width; x++) {
         for (var y = 0; y < height; y++) {
             // for each pixel, color it either alive or dead randomly.
-            write(after, x, y, (Math.random() > 0.5) ? alive : dead);
+            write(after, x, y, (Math.random() > 0.8) ? alive : dead);
         }
     }
     // and then 'put' all of those random values into the picture, all at once.
