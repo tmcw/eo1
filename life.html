@@ -11,8 +11,8 @@ var width = 720,
     // black. We only set the `red` channel of the cells in this case,
     // so living cells are cyan `(0, 255, 255, 255)` and dead cells are white
     // `(255, 255, 255, 255)`
-    alive = 0,
-    dead = 200,
+    alive = 100,
+    dead = 0,
     canvas = document.getElementById('c');
 
 canvas.width = width;
@@ -60,7 +60,7 @@ function tick() {
     }
 
     ctx.putImageData(after, 0, 0);
-    window.setTimeout(tick, 50);
+    window.setTimeout(tick, 1);
 }
 
 function shouldLive(before, x, y) {
