@@ -7171,7 +7171,7 @@ Elm.Main.make = function (_elm) {
       },
       A2($List.map,$Basics.round,_U.range(0,31))))])));
    };
-   var main = A2($Signal.map,clock,$Time.every($Time.millisecond));
+   var main = A2($Signal.map,clock,$Time.every($Time.second));
    return _elm.Main.values = {_op: _op
                              ,main: main
                              ,width: width

@@ -10,7 +10,7 @@ import String exposing (join)
 import Transform2D exposing (translation)
 
 main =
-  Signal.map clock (every millisecond)
+  Signal.map clock (every second)
   
 width = 1440
 height = 2560
