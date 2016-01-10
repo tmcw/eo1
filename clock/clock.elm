@@ -24,13 +24,14 @@ clearGrey =
 lightGrey =
   rgba 100 100 100 0.5
     
-gap = 233
-perline = 6
-margin = 140
+gapX = 280
+gapY = 280
+perline = 4
+margin = 300
 
 toCoordinates place = (
-  toFloat ((place % perline) * gap),
-  (toFloat (-(floor ((toFloat place) / perline)) * gap)))
+  toFloat ((place % perline) * gapX),
+  (toFloat (-(floor ((toFloat place) / perline)) * gapY)))
 
 clock t =
   collage width height
@@ -41,8 +42,8 @@ clock t =
           (Transform2D.translation ((-width / 2) + margin) ((height / 2) - margin))
           (List.map
             (\(place) ->
-              (circle 160 
+              (circle 300 
                 |> filled (if (getBit t place) then lightGrey else clearGrey)
                 |> move (toCoordinates (place))))
-             (List.map round [0..63])))
+             (List.map round [0..31])))
       ])

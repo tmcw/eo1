@@ -7141,13 +7141,14 @@ Elm.Main.make = function (_elm) {
    $Time = Elm.Time.make(_elm),
    $Transform2D = Elm.Transform2D.make(_elm);
    var _op = {};
-   var margin = 140;
-   var perline = 6;
-   var gap = 233;
+   var margin = 300;
+   var perline = 4;
+   var gapY = 280;
+   var gapX = 280;
    var toCoordinates = function (place) {
       return {ctor: "_Tuple2"
-             ,_0: $Basics.toFloat(A2($Basics._op["%"],place,perline) * gap)
-             ,_1: $Basics.toFloat((0 - $Basics.floor($Basics.toFloat(place) / perline)) * gap)};
+             ,_0: $Basics.toFloat(A2($Basics._op["%"],place,perline) * gapX)
+             ,_1: $Basics.toFloat((0 - $Basics.floor($Basics.toFloat(place) / perline)) * gapY)};
    };
    var lightGrey = A4($Color.rgba,100,100,100,0.5);
    var clearGrey = A4($Color.rgba,50,50,50,0.5);
@@ -7166,9 +7167,9 @@ Elm.Main.make = function (_elm) {
       function (place) {
          return A2($Graphics$Collage.move,
          toCoordinates(place),
-         A2($Graphics$Collage.filled,A2(getBit,t,place) ? lightGrey : clearGrey,$Graphics$Collage.circle(160)));
+         A2($Graphics$Collage.filled,A2(getBit,t,place) ? lightGrey : clearGrey,$Graphics$Collage.circle(300)));
       },
-      A2($List.map,$Basics.round,_U.range(0,63))))])));
+      A2($List.map,$Basics.round,_U.range(0,31))))])));
    };
    var main = A2($Signal.map,clock,$Time.every($Time.millisecond));
    return _elm.Main.values = {_op: _op
@@ -7178,7 +7179,8 @@ Elm.Main.make = function (_elm) {
                              ,getBit: getBit
                              ,clearGrey: clearGrey
                              ,lightGrey: lightGrey
-                             ,gap: gap
+                             ,gapX: gapX
+                             ,gapY: gapY
                              ,perline: perline
                              ,margin: margin
                              ,toCoordinates: toCoordinates
