@@ -26,7 +26,7 @@ lightGrey =
     
 gap = 233
 perline = 6
-margin = 116
+margin = 140
 
 toCoordinates place = (
   toFloat ((place % perline) * gap),
