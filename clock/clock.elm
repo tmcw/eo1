@@ -19,7 +19,10 @@ getBit t offset = (shiftRightLogical
   (shiftLeft (round t) offset) 31) == 1
   
 clearGrey =
-  rgba 111 111 111 0.4
+  rgba 50 50 50 0.5
+
+lightGrey =
+  rgba 100 100 100 0.5
     
 gap = 233
 perline = 6
@@ -38,8 +41,8 @@ clock t =
           (Transform2D.translation ((-width / 2) + margin) ((height / 2) - margin))
           (List.map
             (\(place) ->
-              (circle 20
-                |> filled (if (getBit t place) then white else clearGrey)
+              (circle 160 
+                |> filled (if (getBit t place) then lightGrey else clearGrey)
                 |> move (toCoordinates (place))))
              (List.map round [0..63])))
       ])

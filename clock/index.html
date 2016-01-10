@@ -7149,7 +7149,8 @@ Elm.Main.make = function (_elm) {
              ,_0: $Basics.toFloat(A2($Basics._op["%"],place,perline) * gap)
              ,_1: $Basics.toFloat((0 - $Basics.floor($Basics.toFloat(place) / perline)) * gap)};
    };
-   var clearGrey = A4($Color.rgba,111,111,111,0.4);
+   var lightGrey = A4($Color.rgba,100,100,100,0.5);
+   var clearGrey = A4($Color.rgba,50,50,50,0.5);
    var getBit = F2(function (t,offset) {    return _U.eq(A2($Bitwise.shiftRightLogical,A2($Bitwise.shiftLeft,$Basics.round(t),offset),31),1);});
    var height = 2560;
    var width = 1440;
@@ -7165,7 +7166,7 @@ Elm.Main.make = function (_elm) {
       function (place) {
          return A2($Graphics$Collage.move,
          toCoordinates(place),
-         A2($Graphics$Collage.filled,A2(getBit,t,place) ? $Color.white : clearGrey,$Graphics$Collage.circle(20)));
+         A2($Graphics$Collage.filled,A2(getBit,t,place) ? lightGrey : clearGrey,$Graphics$Collage.circle(160)));
       },
       A2($List.map,$Basics.round,_U.range(0,63))))])));
    };
@@ -7176,6 +7177,7 @@ Elm.Main.make = function (_elm) {
                              ,height: height
                              ,getBit: getBit
                              ,clearGrey: clearGrey
+                             ,lightGrey: lightGrey
                              ,gap: gap
                              ,perline: perline
                              ,margin: margin
