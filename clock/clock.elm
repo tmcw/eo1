@@ -12,8 +12,8 @@ import Transform2D exposing (translation)
 main =
   Signal.map clock (every millisecond)
   
-width = 1080
-height = 1920
+width = 1440
+height = 2560
   
 getBit t offset = (shiftRightLogical
   (shiftLeft (round t) offset) 31) == 1
@@ -21,9 +21,9 @@ getBit t offset = (shiftRightLogical
 clearGrey =
   rgba 111 111 111 0.4
     
-gap = 170
+gap = 233
 perline = 6
-margin = 100
+margin = 116
 
 toCoordinates place = (
   toFloat ((place % perline) * gap),

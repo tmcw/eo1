@@ -7141,9 +7141,9 @@ Elm.Main.make = function (_elm) {
    $Time = Elm.Time.make(_elm),
    $Transform2D = Elm.Transform2D.make(_elm);
    var _op = {};
-   var margin = 100;
+   var margin = 116;
    var perline = 6;
-   var gap = 170;
+   var gap = 233;
    var toCoordinates = function (place) {
       return {ctor: "_Tuple2"
              ,_0: $Basics.toFloat(A2($Basics._op["%"],place,perline) * gap)
@@ -7151,8 +7151,8 @@ Elm.Main.make = function (_elm) {
    };
    var clearGrey = A4($Color.rgba,111,111,111,0.4);
    var getBit = F2(function (t,offset) {    return _U.eq(A2($Bitwise.shiftRightLogical,A2($Bitwise.shiftLeft,$Basics.round(t),offset),31),1);});
-   var height = 1920;
-   var width = 1080;
+   var height = 2560;
+   var width = 1440;
    var clock = function (t) {
       return A3($Graphics$Collage.collage,
       width,
