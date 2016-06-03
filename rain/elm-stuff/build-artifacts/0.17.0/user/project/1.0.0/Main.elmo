@@ -1,0 +1,44 @@
+var _user$project$Main$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[]),
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_evancz$elm_graphics$Element$toHtml(
+				A3(
+					_evancz$elm_graphics$Collage$collage,
+					500,
+					500,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							A2(
+							_evancz$elm_graphics$Collage$filled,
+							A3(_elm_lang$core$Color$rgb, 200, 100, 20),
+							A2(
+								_evancz$elm_graphics$Collage$rect,
+								(_elm_lang$core$Basics$sin(model / 100) * 10) + 100,
+								20))
+						])))
+			]));
+};
+var _user$project$Main$update = F2(
+	function (action, model) {
+		var _p0 = action;
+		return {ctor: '_Tuple2', _0: _p0._0, _1: _elm_lang$core$Platform_Cmd$none};
+	});
+var _user$project$Main$createFuture = A2(
+	_elm_lang$core$Random$list,
+	500,
+	A2(_elm_lang$core$Random$int, 0, 500));
+var _user$project$Main$init = {ctor: '_Tuple2', _0: 0, _1: _elm_lang$core$Platform_Cmd$none};
+var _user$project$Main$Tick = function (a) {
+	return {ctor: 'Tick', _0: a};
+};
+var _user$project$Main$subscriptions = function (model) {
+	return A2(_elm_lang$core$Time$every, _elm_lang$core$Time$millisecond, _user$project$Main$Tick);
+};
+var _user$project$Main$main = {
+	main: _elm_lang$html$Html_App$program(
+		{init: _user$project$Main$init, view: _user$project$Main$view, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions})
+};
